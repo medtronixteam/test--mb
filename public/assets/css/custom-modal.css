@@ -1,0 +1,127 @@
+    /* Custom right sidebar modal */
+        .custom-modal-right {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: auto;
+            width: 100%;
+            max-width: 500px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1050;
+        }
+        
+        .custom-modal-right .modal-content {
+            height: 100vh;
+            border: none;
+            border-radius: 0;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .custom-modal-right.show {
+            transform: translateX(0);
+        }
+        
+        .custom-modal-right.modal-dialog {
+          margin: 0 auto !important;
+        }
+        
+        /* Hide backdrop by default */
+        .modal-backdrop.custom-backdrop {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-backdrop.custom-backdrop.show {
+            opacity: 0.5;
+        }
+        
+        /* Override Bootstrap defaults */
+        .modal-open {
+            overflow: hidden;
+        }
+        
+        .modal-open .modal {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        /* Custom close button positioning */
+        .custom-modal-right .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1051;
+        }
+        
+        /* Modal body styling */
+        .custom-modal-right .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 120px);
+        }
+        
+        /* Header styling */
+        .custom-modal-right .modal-header {
+            border-bottom: 1px solid #dee2e6;
+            padding: 15px 20px;
+        }
+        
+        /* Footer styling */
+        .custom-modal-right .modal-footer {
+            border-top: 1px solid #dee2e6;
+            padding: 15px 20px;
+        }
+
+         
+
+        /* Overlay spinner container */
+        .overlay-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Spinner styling */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+
+        .spinner::before,
+        .spinner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top-color: #000;
+            animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+
+        .spinner::after {
+            border-top-color: #e74c3c;
+            animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite reverse;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide spinner when not needed */
+        .overlay-spinner.hidden {
+            display: none;
+        }
