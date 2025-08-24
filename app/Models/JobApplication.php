@@ -10,12 +10,14 @@ class JobApplication extends Model
     protected $keyType = 'string';
     public $incrementing = false;
     protected $fillable = [
-        'job_posting_id',
         'applicant_name',
+        'applicant_id',
+        'job_posting_id',
         'email',
         'phone',
         'resume_path',
-        'cover_letter'
+        'cover_letter',
+        'is_approved',
     ];
 
     public function jobPosting()
