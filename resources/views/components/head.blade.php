@@ -21,4 +21,5 @@
             border-top-color: #F3671C;
         }
     </style>
+    @stack('css')
 </head>

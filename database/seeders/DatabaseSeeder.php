@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Tag;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -29,6 +30,21 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+       Tag::updateOrCreate(
+            ['name' => 'laravel'],
+            ['name' => 'laravel']
+        );
 
+        Tag::updateOrCreate(
+            ['name' => 'php'],
+            ['name' => 'php']
+        );
+
+        Tag::updateOrCreate(
+            ['name' => 'javaScript'],
+            ['name' => 'javaScript']
+        );
+
+        // Add more seeders as needed
     }
 }

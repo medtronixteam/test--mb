@@ -38,14 +38,25 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::post('projects/store', [ProjectController::class, 'store'])->name('projects.store');
 
 
-     //blogs
+    //blogs
     Route::get('blogs', [BlogController::class, 'index'])->name('blogs.index');
     Route::get('blogs/list', \App\Livewire\Admin\Blogs::class)->name('blogs');
     Route::post('blogs/upload-chunk', [BlogController::class, 'uploadChunk'])->name('blogs.upload-chunk');
     Route::post('blogs/store', [BlogController::class, 'store'])->name('blogs.store');
+
+    //jobs
+
+    Route::get('/jobs', App\Livewire\Company\Jobs\JobList::class)->name('jobs.list');
+    Route::get('/jobs/create', App\Livewire\Company\Jobs\JobForm::class)->name('jobs.create');
+    Route::get('/jobs/{id}/edit', App\Livewire\Company\Jobs\JobForm::class)->name('jobs.edit');
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'warehouse', 'as' => 'warehouse.'], function () {});
 
 
 // routes/web.phps
+
+// routes/web.php
+use App\Livewire\JobListing;
+
+Route::get('/jobs/list', JobListing::class)->name('jobs.index');
