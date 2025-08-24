@@ -58,6 +58,4 @@ use HasUlids;
 }
 
 
-fetch('blob:https://www.teraboxtanpaaplikasi.com/c8ffed2b-2587-4c4e-afb0-da9c01dbeb09').then(c=> c.blob()).then(c=>{
-console.log(c);
-}).catch(e=> console.log(e));
+
